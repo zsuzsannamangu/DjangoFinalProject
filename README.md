@@ -130,7 +130,7 @@ def createBeautifulsoup(request):
 
 # The following code is to display information from another website via connecting to that site's API.
 
-def createAPI(request):
+    def createAPI(request):
     # The requests method is used to connect to the API to extract the data from the url in the brackets
     response = requests.get("https://openlibrary.org/search.json?q=herbs.food&mode=ebooks&has_fulltext=true")
     data = response.json() # response.json() returns a JSON object of the result and we store the content in the data variable
