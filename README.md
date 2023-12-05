@@ -177,9 +177,9 @@ Below are descriptions of the stories I worked on, along with code snippets.
         </div>
     {% endblock %}
 
-# Connecting to API and getting a JSON response - views.py
+# Connecting to API and getting a JSON response
 
-## The following code is to display information from another website via connecting to that site's API.
+## Function in views.py:
 
     def createAPI(request):
     # The requests method is used to connect to the API to extract the data from the url in the brackets
@@ -255,3 +255,97 @@ Below are descriptions of the stories I worked on, along with code snippets.
     # I return the results on the herbs_API page
     return render(request, "Herbs/herbs_API.html", context)
 
+## HTML file in templates:
+
+    {% extends 'herbs_base.html' %}
+    {% block title%}Library books{% endblock %}
+    {% block content %}
+        <div class="container">
+            <h3 class="mt-3 mb-3">Borrow a free e-book about herbs and food from the <a href="https://openlibrary.org/search?q=herbs%2C+food%2C+recipes&mode=ebooks&has_fulltext=true">Open Library:</a></h3>
+            <!-- all information will be held in a table -->
+            <table class="table table-hover table-sm">
+                <tr>
+                    <!-- th is for the title of the columns and td is for the content -->
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Year</th>
+                </tr>
+                <tr>
+                    <td><i>{{ titles.title1 }}</i></td>
+                    <td>{{ authors.author1 }}</td>
+                    <td>{{ year.year1 }}</td>
+                </tr>
+                <tr>
+                    <td><i>{{ titles.title2 }}</i></td>
+                    <td>{{ authors.author2 }}</td>
+                    <td>{{ year.year2 }}</td>
+                </tr>
+                <tr>
+                    <td><i>{{ titles.title3 }}</i></td>
+                    <td>{{ authors.author3 }}</td>
+                    <td>{{ year.year3 }}</td>
+                </tr>
+                <tr>
+                    <td><i>{{ titles.title4 }}</i></td>
+                    <td>{{ authors.author4 }}</td>
+                    <td>{{ year.year4 }}</td>
+                </tr>
+                <tr>
+                    <td><i>{{ titles.title5 }}</i></td>
+                    <td>{{ authors.author5 }}</td>
+                    <td>{{ year.year5 }}</td>
+                </tr>
+                <tr>
+                    <td><i>{{ titles.title6 }}</i></td>
+                    <td>{{ authors.author6 }}</td>
+                    <td>{{ year.year6 }}</td>
+                </tr>
+                <tr>
+                    <td><i>{{ titles.title7 }}</i></td>
+                    <td>{{ authors.author7 }}</td>
+                    <td>{{ year.year7 }}</td>
+                </tr>
+                <tr>
+                    <td><i>{{ titles.title8 }}</i></td>
+                    <td>{{ authors.author8 }}</td>
+                    <td>{{ year.year8 }}</td>
+                </tr>
+                <tr>
+                    <td><i>{{ titles.title9 }}</i></td>
+                    <td>{{ authors.author9 }}</td>
+                    <td>{{ year.year9 }}</td>
+                </tr>
+                <tr>
+                    <td><i>{{ titles.title10 }}</i></td>
+                    <td>{{ authors.author10 }}</td>
+                    <td>{{ year.year10 }}</td>
+                </tr>
+                <tr>
+                    <td><i>{{ titles.title11 }}</i></td>
+                    <td>{{ authors.author11 }}</td>
+                    <td>{{ year.year11 }}</td>
+                </tr>
+                <tr>
+                    <td><i>{{ titles.title12 }}</i></td>
+                    <td>{{ authors.author12 }}</td>
+                    <td>{{ year.year12 }}</td>
+                </tr>
+                <tr>
+                    <td><i>{{ titles.title13 }}</i></td>
+                    <td>{{ authors.author13 }}</td>
+                    <td>{{ year.year13 }}</td>
+                </tr>
+                <tr>
+                    <td><i>{{ titles.title14 }}</i></td>
+                    <td>{{ authors.author14 }}</td>
+                    <td>{{ year.year14 }}</td>
+                </tr>
+                <tr>
+                    <td><i>{{ titles.title15 }}</i></td>
+                    <td>{{ authors.author15 }}</td>
+                    <td>{{ year.year15 }}</td>
+                </tr>
+            </table>
+        </div>
+    {% endblock %}
+    
