@@ -261,7 +261,8 @@ Below are descriptions of the stories I worked on, along with code snippets.
     {% block title%}Library books{% endblock %}
     {% block content %}
         <div class="container">
-            <h3 class="mt-3 mb-3">Borrow a free e-book about herbs and food from the <a href="https://openlibrary.org/search?q=herbs%2C+food%2C+recipes&mode=ebooks&has_fulltext=true">Open Library:</a></h3>
+            <h3 class="mt-3 mb-3">Borrow a free e-book about herbs and food from the 
+             <a href="https://openlibrary.org/search?q=herbs%2C+food%2C+recipes&mode=ebooks&has_fulltext=true">Open Library:</a></h3>
             <!-- all information will be held in a table -->
             <table class="table table-hover table-sm">
                 <tr>
