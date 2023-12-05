@@ -177,7 +177,6 @@ Below are descriptions of the stories I worked on, along with code snippets.
         </div>
     {% endblock %}
 
-
 # Connecting to API and getting a JSON response - views.py
 
 ## The following code is to display information from another website via connecting to that site's API.
