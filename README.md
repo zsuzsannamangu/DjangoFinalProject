@@ -3,7 +3,7 @@ As my final project for Python I was asked to work on a team and develop an MVC 
 
 This was a super fun project. I absolutely love the structure of Django and the simplicity of Python. It was also a great experience to work on a team and connect on daily standup meetings.
 
-Below are descriptions of the stories I worked on, along with code snippets.
+Below are code snippets of the stories I worked on with comments.
  
 # CRUD Functionality - views.py:
 
