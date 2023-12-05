@@ -5,9 +5,9 @@ This was a super fun project. I absolutely love the structure of Django and the 
 
 Below are descriptions of the stories I worked on, along with code snippets.
  
-## CRUD Functionality
+# CRUD Functionality - views.py:
 
-# This function allows users to choose an herb from the home page and view information about only that herb on a separate page:
+## This function allows users to choose an herb from the home page and view information about only that herb on a separate page:
      
      def herbs_home(request):
      form = RecipeForm(data=request.POST or None)  # Retrieve the herb form
@@ -21,14 +21,14 @@ Below are descriptions of the stories I worked on, along with code snippets.
      
      return render(request, 'herbs/herbs_home.html', {'form': form})
 
-# This function will display details about queried herb:
+## This function will display details about queried herb:
     
     def herbDetails(request, pk): #herbDetails have two arguments: request and pk which refers to the herb's primary key
     Herbinfo = Newherb.Newherbs.filter(pk=pk) #Refer back to the Newherb model and filter it by its primary key
     
     return render (request, 'Herbs/herbs_herbdetails.html', {'Herbinfo': Herbinfo})
 
-# This function will allow to update an herb:
+## This function will allow to update an herb:
     
     def updateHerb(request, pk):
     Uherb = Newherb.Newherbs.get(pk=pk) # Get the primary key of the requested herb from the Newherb model
@@ -45,7 +45,7 @@ Below are descriptions of the stories I worked on, along with code snippets.
     content = {'form': form, 'Uherb': Uherb} # content variable holds a dictionary with our two variables above
     return render(request, 'Herbs/herbs_updateherb.html', content)
 
-# This function will allow to delete an herb:
+## This function will allow to delete an herb:
     
     def deleteHerb(request, pk):
     Dherb=Newherb.Newherbs.filter(pk=pk) # retrieve the pk of the chosen herb from the Newherb model
@@ -57,7 +57,7 @@ Below are descriptions of the stories I worked on, along with code snippets.
     
     return render(request, 'Herbs/herbs_deleteherb.html', {'Dherb' : Dherb})
 
-# This function allows users to see all herbs added to the database:
+## This function allows users to see all herbs added to the database:
     
     def allHerbs(request):
     
@@ -72,7 +72,7 @@ Below are descriptions of the stories I worked on, along with code snippets.
     
     return HttpResponse(template.render(context, request))
 
-# This function allows users to add an herb:
+## This function allows users to add an herb:
     
     def herbs_addherb(request):
     form = NewherbForm(data=request.POST or None)  # Retrieve the herb form
@@ -86,7 +86,7 @@ Below are descriptions of the stories I worked on, along with code snippets.
     
     return render(request, 'herbs/herbs_addherb.html', {'form': form})
 
-# This function allows users to search the database for a specific herb:
+## This function allows users to search the database for a specific herb:
     
     def search(request):
     
@@ -102,9 +102,9 @@ Below are descriptions of the stories I worked on, along with code snippets.
     else: #if not, it will leave the table empty as we didn't put anything inside of the dictionary
         return render (request, 'Herbs/herbs_search.html', {})
 
-## Web Scraping with Beautiful Soup
+# Web Scraping with Beautiful Soup - views.py
 
-# The following code is to display information sourced from another website via web scraping.
+## The following code is to display information sourced from another website via web scraping.
 
     def createBeautifulsoup(request):
     url = "https://plantyou.com/category/all-recipes/" #this is the url that I'm scraping
@@ -150,9 +150,9 @@ Below are descriptions of the stories I worked on, along with code snippets.
     # display it via the .html page specified below, that is where the structure of the page is created
     return render(request, "Herbs/herbs_BeautifulSoup.html
 
-## Connecting to API and getting a JSON response
+# Connecting to API and getting a JSON response - views.py
 
-# The following code is to display information from another website via connecting to that site's API.
+## The following code is to display information from another website via connecting to that site's API.
 
     def createAPI(request):
     # The requests method is used to connect to the API to extract the data from the url in the brackets
