@@ -8,15 +8,15 @@ Below are descriptions of the stories I worked on, along with code snippets.
 ## CRUD Functionality
 
 # This function allows users to choose an herb from the home page and view information about only that herb on a separate page:
-def herbs_home(request):
-    form = RecipeForm(data=request.POST or None)  # Retrieve the herb form
-    # checks if request method is POST
-    if request.method == 'POST':
-        pk = request.POST['Herb']  # if the form is submitted, retrieve which herb
-        # the user wants to view
-        return herbDetails(request, pk)  # call herbDetails function
-        # return requested information
-    return render(request, 'herbs/herbs_home.html', {'form': form})
+  def herbs_home(request):
+     form = RecipeForm(data=request.POST or None)  # Retrieve the herb form
+     # checks if request method is POST
+     if request.method == 'POST':
+         pk = request.POST['Herb']  # if the form is submitted, retrieve which herb
+         # the user wants to view
+         return herbDetails(request, pk)  # call herbDetails function
+         # return requested information
+     return render(request, 'herbs/herbs_home.html', {'form': form})
 
 # This function will display details about queried herb:
 def herbDetails(request, pk): #herbDetails have two arguments: request and pk which refers to the herb's primary key
