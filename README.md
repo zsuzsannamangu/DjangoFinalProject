@@ -8,7 +8,7 @@ Below are descriptions of the stories I worked on, along with code snippets.
 ## CRUD Functionality
 
 # This function allows users to choose an herb from the home page and view information about only that herb on a separate page:
-  def herbs_home(request):
+     def herbs_home(request):
      form = RecipeForm(data=request.POST or None)  # Retrieve the herb form
      # checks if request method is POST
      if request.method == 'POST':
@@ -19,12 +19,12 @@ Below are descriptions of the stories I worked on, along with code snippets.
      return render(request, 'herbs/herbs_home.html', {'form': form})
 
 # This function will display details about queried herb:
-def herbDetails(request, pk): #herbDetails have two arguments: request and pk which refers to the herb's primary key
+    def herbDetails(request, pk): #herbDetails have two arguments: request and pk which refers to the herb's primary key
     Herbinfo = Newherb.Newherbs.filter(pk=pk) #Refer back to the Newherb model and filter it by its primary key
     return render (request, 'Herbs/herbs_herbdetails.html', {'Herbinfo': Herbinfo})
 
 # This function will allow to update an herb:
-def updateHerb(request, pk):
+    def updateHerb(request, pk):
     Uherb = Newherb.Newherbs.get(pk=pk) # Get the primary key of the requested herb from the Newherb model
     form = NewherbForm(data=request.POST or None, instance=Uherb) # Retrieve the NewherbForm
     # instance=Uherb references this particular instance of the NewherbForm, so the form can show the information
@@ -38,7 +38,7 @@ def updateHerb(request, pk):
     return render(request, 'Herbs/herbs_updateherb.html', content)
 
 # This function will allow to delete an herb:
-def deleteHerb(request, pk):
+    def deleteHerb(request, pk):
     Dherb=Newherb.Newherbs.filter(pk=pk) # retrieve the pk of the chosen herb from the Newherb model
     # Newherbs refers to the model manager that we specified in models.py
     if request.method == "POST": # if method is post, delete it
@@ -47,7 +47,7 @@ def deleteHerb(request, pk):
     return render(request, 'Herbs/herbs_deleteherb.html', {'Dherb' : Dherb})
 
 # This function allows users to see all herbs added to the database:
-def allHerbs(request):
+    def allHerbs(request):
     # create a new variable named allHerbData, use objects.all() method to
     # get all the records and fields of the Newherb model.
     # objects refers to the model manager here which we named: Newherbs.
@@ -59,7 +59,7 @@ def allHerbs(request):
     return HttpResponse(template.render(context, request))
 
 # This function allows users to add an herb:
-def herbs_addherb(request):
+    def herbs_addherb(request):
     form = NewherbForm(data=request.POST or None)  # Retrieve the herb form
     # checks if request method is POST
     if request.method == 'POST':
@@ -70,7 +70,7 @@ def herbs_addherb(request):
     return render(request, 'herbs/herbs_addherb.html', {'form': form})
 
 # This function allows users to search the database for a specific herb:
-def search(request):
+    def search(request):
     if request.method == "POST": # if request method is post
         searched = request.POST['searched'] # we are referring here to the searched term
         # The herbs variable holds the return search result
@@ -87,7 +87,7 @@ def search(request):
 
 # The following code is to display information sourced from another website via web scraping.
 
-def createBeautifulsoup(request):
+    def createBeautifulsoup(request):
     url = "https://plantyou.com/category/all-recipes/" #this is the url that I'm scraping
     response = requests.get(url) # Make a get request with the requests.get() method, it requires one argument
     soup = BeautifulSoup(response.content, "html.parser") #we create a BeautifulSoup object by passing two arguments
