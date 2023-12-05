@@ -102,9 +102,9 @@ Below are descriptions of the stories I worked on, along with code snippets.
     else: #if not, it will leave the table empty as we didn't put anything inside of the dictionary
         return render (request, 'Herbs/herbs_search.html', {})
 
-# Web Scraping with Beautiful Soup - views.py
+# Web Scraping with Beautiful Soup
 
-## The following code is to display information sourced from another website via web scraping.
+## Function in views.py:
 
     def createBeautifulsoup(request):
     url = "https://plantyou.com/category/all-recipes/" #this is the url that I'm scraping
@@ -149,6 +149,34 @@ Below are descriptions of the stories I worked on, along with code snippets.
     
     # display it via the .html page specified below, that is where the structure of the page is created
     return render(request, "Herbs/herbs_BeautifulSoup.html
+
+## HTML file in templates:
+
+    {% extends 'herbs_base.html' %}
+    {% block title%}More recipes{% endblock %}
+    {% block content %}
+        <div class="container">
+            <h3 class="mt-3 mb-3">Latest recipes from PlantYou:</h3>
+            <div>
+                <!-- we put all recipe titles into a <ul> -->
+                <!-- we made the recipe titles clickable by adding <a> tag -->
+                <!-- the list-group class is a built-in Bootstrap class to style lists -->
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-light"><a href="{{ all_urls.url1 }}" alt="Recipe"><h5>{{ all_recipes.recipe1 }}</h5></a></li>
+                    <li class="list-group-item list-group-item-light"><a href="{{ all_urls.url2 }}" alt="Recipe"><h5>{{ all_recipes.recipe2 }}</h5></a></li>
+                    <li class="list-group-item list-group-item-light"><a href="{{ all_urls.url3 }}" alt="Recipe"><h5>{{ all_recipes.recipe3 }}</h5></a></li>
+                    <li class="list-group-item list-group-item-light"><a href="{{ all_urls.url4 }}" alt="Recipe"><h5>{{ all_recipes.recipe4 }}</h5></a></li>
+                    <li class="list-group-item list-group-item-light"><a href="{{ all_urls.url5 }}" alt="Recipe"><h5>{{ all_recipes.recipe5 }}</h5></a></li>
+                    <li class="list-group-item list-group-item-light"><a href="{{ all_urls.url6 }}" alt="Recipe"><h5>{{ all_recipes.recipe6 }}</h5></a></li>
+                    <li class="list-group-item list-group-item-light"><a href="{{ all_urls.url7 }}" alt="Recipe"><h5>{{ all_recipes.recipe7 }}</h5></a></li>
+                    <li class="list-group-item list-group-item-light"><a href="{{ all_urls.url8 }}" alt="Recipe"><h5>{{ all_recipes.recipe8 }}</h5></a></li>
+                    <li class="list-group-item list-group-item-light"><a href="{{ all_urls.url9 }}" alt="Recipe"><h5>{{ all_recipes.recipe9 }}</h5></a></li>
+                    <li class="list-group-item list-group-item-light"><a href="{{ all_urls.url10 }}" alt="Recipe"><h5>{{ all_recipes.recipe10 }}</h5></a></li>
+                </ul>
+            </div>
+        </div>
+    {% endblock %}
+
 
 # Connecting to API and getting a JSON response - views.py
 
