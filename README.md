@@ -349,4 +349,17 @@ Below are code snippets of the stories I worked on with comments.
             </table>
         </div>
     {% endblock %}
-    
+
+## Support and contact details
+
+_Feel free to contact me at zsuzsannamangu[at]gmail.com with any questions._
+
+## Technologies Used
+
+_Python, Django_
+
+### License
+
+*MIT*
+
+Copyright (c) 2024 **_Zsuzsanna Mangu_**
