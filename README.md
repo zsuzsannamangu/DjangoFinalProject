@@ -356,7 +356,7 @@ _Feel free to contact me at zsuzsannamangu[at]gmail.com with any questions._
 
 ## Technologies Used
 
-_Python, Django_
+_Python, Django, HTML, CSS, JavaScript, Bootstrap, PyCharm as IDE_
 
 ### License
 
